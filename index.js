@@ -34,7 +34,7 @@ const generateCard = (event) => {
           <h5 class="card-title">${name}</h5>
           <p class="card-text">${description} </p>
           <p>${price + "€"} </p>
-          <a href="./details.html" class="btn btn-primary">Scopri di più</a>
+          <a href="./details.html?appId=${_id}" class="btn btn-primary">Scopri di più</a>
           <a href="./back-office.html?appId=${_id}" class="btn btn-danger">Modifica</a>
         </div>
       </div> `;

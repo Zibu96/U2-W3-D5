@@ -20,7 +20,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     deleteBtn.addEventListener("click", handleDelete);
     deleteBtn.classList.remove("d-none");
-    fetch(URL)
+    fetch(URL, {
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjE4ZWNmNTdmMzA0NjAwMWFlNTlmNmYiLCJpYXQiOjE3MTI5MDk1NTcsImV4cCI6MTcxNDExOTE1N30.K04dk3uKhthE1EpEbOaOjkq8Eo4_5tIQGqyMbSeIqcU",
+      },
+    })
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
@@ -88,8 +93,13 @@ const handleDelete = () => {
   );
 
   if (hasConfirmed) {
-    e;
-    fetch(URL, { method: "DELETE" })
+    fetch(URL, {
+      method: "DELETE",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjE4ZWNmNTdmMzA0NjAwMWFlNTlmNmYiLCJpYXQiOjE3MTI5MDk1NTcsImV4cCI6MTcxNDExOTE1N30.K04dk3uKhthE1EpEbOaOjkq8Eo4_5tIQGqyMbSeIqcU",
+      },
+    })
       .then((resp) => resp.json())
       .then((resp) => {
         if (resp.ok) {

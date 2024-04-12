@@ -47,7 +47,34 @@
     </header>
     <main>
       <div class="container">
-        <div class="row row-cols-2"></div>
+        <div class="row row-cols-1 row-cols-md-2 align-items-center">
+          <div class="col">
+            <div>
+              <img
+                id="imageUrl"
+                src=""
+                alt=""
+                class="shadow my-5 bg-body-tertiary rounded"
+              />
+            </div>
+            <div>
+              <a
+                class="btn btn-info"
+                href="./index.html"
+                role="button"
+                aria-disabled="true"
+                ><--- Torna alla home</a
+              >
+            </div>
+          </div>
+          <div class="col">
+            <h2 id="name"></h2>
+            <h5 id="brand"></h5>
+            <p id="description"></p>
+            <p id="price"></p>
+            <button type="button">Aggiungi al carrello</button>
+          </div>
+        </div>
       </div>
     </main>
     <script
@@ -55,6 +82,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./index.js"></script>
+    <script src="./details.js"></script>
   </body>
 </html>
