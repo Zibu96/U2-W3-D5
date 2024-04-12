@@ -6,6 +6,8 @@ const URL = id
   : "https://striveschool-api.herokuapp.com/api/product/";
 const method = id ? "PUT" : "POST";
 
+const resetBtn = document.getElementById("resetBtn");
+
 const mainBtn = document.getElementById("mainBtn");
 const deleteBtn = document.getElementById("deleteBtn");
 const subtitle = document.querySelector("h4");
@@ -41,6 +43,9 @@ window.addEventListener("DOMContentLoaded", () => {
         document.getElementById("brand").value = brand;
         document.getElementById("imageUrl").value = imageUrl;
         document.getElementById("price").value = price;
+      })
+      .then((modifiedProduct) => {
+        alert("Prodotto " + modifiedProduct.name + " modificato con successo!");
       })
       .catch((err) => console.log(err));
   }
@@ -78,11 +83,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       })
       .then((createdProduct) => {
-        alert(
-          "Risorsa con id: " + createdProduct._id + " creata con successo!"
-        );
-
-        event.target.reset();
+        alert("Prodotto " + createdProduct.name + " creato con successo!");
       })
       .catch((err) => console.log(err));
   };
@@ -116,3 +117,11 @@ const handleDelete = () => {
       .catch((err) => console.log(err));
   }
 };
+
+resetBtn.addEventListener("click", (event) => {
+  if (confirm("sicuro di voler cancellare i dati inseirit?")) {
+    form.reset();
+  } else {
+    event.preventDefault();
+  }
+});

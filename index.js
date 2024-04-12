@@ -28,15 +28,17 @@ const generateCard = (event) => {
         const div = document.createElement("div");
         div.classList.add("col-md-4");
 
-        div.innerHTML = `<div class="card">
+        div.innerHTML = `<div class="card my-3 shadow bg-body-tertiary rounded">
         <img src=${img} class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${name}</h5>
           <p class="card-text">${description} </p>
-          <p>${price + "€"} </p>
+          <p class="fw-bold">${price + "€"} </p>
+          <div class="d-flex">
           <a href="./details.html?appId=${_id}" class="btn btn-primary">Scopri di più</a>
-          <a href="./back-office.html?appId=${_id}" class="btn btn-danger">Modifica</a>
+          <a href="./back-office.html?appId=${_id}" class="btn btn-danger ms-auto">Modifica</a>
         </div>
+          </div>
       </div> `;
         row.appendChild(div);
       });
